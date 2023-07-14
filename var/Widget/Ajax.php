@@ -76,7 +76,7 @@ class Ajax extends BaseOptions implements ActionInterface
             $this->response->throwJson($result);
         }
 
-        throw new Exception(_t('禁止访问'), 403);
+        throw new Exception($client === null ? _t('ext-curl 未安装') : _t('禁止访问'), 403);
     }
 
     /**
@@ -121,7 +121,7 @@ class Ajax extends BaseOptions implements ActionInterface
             $this->response->throwJson($data);
         }
 
-        throw new Exception(_t('禁止访问'), 403);
+        throw new Exception($client === null ? _t('ext-curl 未安装') : _t('禁止访问'), 403);
     }
 
     /**
