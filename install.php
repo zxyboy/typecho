@@ -1,16 +1,16 @@
 <?php
-
+// 如果不存在文件： install.php/config.inc.php
 if (!file_exists(dirname(__FILE__) . '/config.inc.php')) {
-    // site root path
+    // site root path ： 网站根目录
     define('__TYPECHO_ROOT_DIR__', dirname(__FILE__));
 
-    // plugin directory (relative path)
+    // plugin directory (relative path) ： 插件相对路径
     define('__TYPECHO_PLUGIN_DIR__', '/usr/plugins');
 
-    // theme directory (relative path)
+    // theme directory (relative path) ： 主题相对目录
     define('__TYPECHO_THEME_DIR__', '/usr/themes');
 
-    // admin directory (relative path)
+    // admin directory (relative path) ： 后台相对目录， 如果想要修改后台路径，求修改此处以后，在修改实际目录名
     define('__TYPECHO_ADMIN_DIR__', '/admin/');
 
     // register autoload
@@ -19,6 +19,7 @@ if (!file_exists(dirname(__FILE__) . '/config.inc.php')) {
     // init
     \Typecho\Common::init();
 } else {
+    // 如果存在文件： install.php/config.inc.php， 则加载config.inc.php文件
     require_once dirname(__FILE__) . '/config.inc.php';
     $installDb = \Typecho\Db::get();
 }
