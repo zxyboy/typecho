@@ -182,13 +182,13 @@ class Response
         if ($this->sandbox) {
             return;
         }
-
+        // 保存HTTP响应头：key
         $sentHeaders = [];
         foreach (headers_list() as $header) {
             [$key] = explode(':', $header, 2);
             $sentHeaders[] = strtolower(trim($key));
         }
-
+        // 设置响应头
         header('HTTP/1.1 ' . $this->status . ' ' . self::HTTP_CODE[$this->status], true, $this->status);
 
         // set header

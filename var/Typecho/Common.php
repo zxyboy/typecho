@@ -75,7 +75,7 @@ namespace {
 
 namespace Typecho {
     const PLUGIN_NAMESPACE = 'TypechoPlugin';
-
+    // 插件类加载器
     spl_autoload_register(function (string $className) {
         $isDefinedAlias = defined('__TYPECHO_CLASS_ALIASES__');
         $isNamespace = strpos($className, '\\') !== false;

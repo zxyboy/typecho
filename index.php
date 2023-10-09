@@ -8,11 +8,13 @@
  */
 
 /** 载入配置支持 */
+// 如果没有初始化，则进行初始化
 if (!defined('__TYPECHO_ROOT_DIR__') && !@include_once 'config.inc.php') {
     file_exists('./install.php') ? header('Location: install.php') : print('Missing Config File');
     exit;
 }
 
+// 初始化完成，则进行页面渲染
 /** 初始化组件 */
 \Widget\Init::alloc();
 

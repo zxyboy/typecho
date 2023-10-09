@@ -1,5 +1,5 @@
 <?php
-// 如果不存在文件： install.php/config.inc.php
+// 第一次配置网站： config.inc.php不存在，配置完成以后生成config.inc.php文件
 if (!file_exists(dirname(__FILE__) . '/config.inc.php')) {
     // site root path ： 网站根目录
     define('__TYPECHO_ROOT_DIR__', dirname(__FILE__));
@@ -77,153 +77,153 @@ function install_is_cli(): bool
 function install_get_default_routers(): array
 {
     return [
-        'index'              =>
+        'index' =>
             [
-                'url'    => '/',
+                'url' => '/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'archive'            =>
+        'archive' =>
             [
-                'url'    => '/blog/',
+                'url' => '/blog/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'do'                 =>
+        'do' =>
             [
-                'url'    => '/action/[action:alpha]',
+                'url' => '/action/[action:alpha]',
                 'widget' => '\Widget\Action',
                 'action' => 'action',
             ],
-        'post'               =>
+        'post' =>
             [
-                'url'    => '/archives/[cid:digital]/',
+                'url' => '/archives/[cid:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'attachment'         =>
+        'attachment' =>
             [
-                'url'    => '/attachment/[cid:digital]/',
+                'url' => '/attachment/[cid:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'category'           =>
+        'category' =>
             [
-                'url'    => '/category/[slug]/',
+                'url' => '/category/[slug]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'tag'                =>
+        'tag' =>
             [
-                'url'    => '/tag/[slug]/',
+                'url' => '/tag/[slug]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'author'             =>
+        'author' =>
             [
-                'url'    => '/author/[uid:digital]/',
+                'url' => '/author/[uid:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'search'             =>
+        'search' =>
             [
-                'url'    => '/search/[keywords]/',
+                'url' => '/search/[keywords]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'index_page'         =>
+        'index_page' =>
             [
-                'url'    => '/page/[page:digital]/',
+                'url' => '/page/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'archive_page'       =>
+        'archive_page' =>
             [
-                'url'    => '/blog/page/[page:digital]/',
+                'url' => '/blog/page/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'category_page'      =>
+        'category_page' =>
             [
-                'url'    => '/category/[slug]/[page:digital]/',
+                'url' => '/category/[slug]/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'tag_page'           =>
+        'tag_page' =>
             [
-                'url'    => '/tag/[slug]/[page:digital]/',
+                'url' => '/tag/[slug]/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'author_page'        =>
+        'author_page' =>
             [
-                'url'    => '/author/[uid:digital]/[page:digital]/',
+                'url' => '/author/[uid:digital]/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'search_page'        =>
+        'search_page' =>
             [
-                'url'    => '/search/[keywords]/[page:digital]/',
+                'url' => '/search/[keywords]/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'archive_year'       =>
+        'archive_year' =>
             [
-                'url'    => '/[year:digital:4]/',
+                'url' => '/[year:digital:4]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'archive_month'      =>
+        'archive_month' =>
             [
-                'url'    => '/[year:digital:4]/[month:digital:2]/',
+                'url' => '/[year:digital:4]/[month:digital:2]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'archive_day'        =>
+        'archive_day' =>
             [
-                'url'    => '/[year:digital:4]/[month:digital:2]/[day:digital:2]/',
+                'url' => '/[year:digital:4]/[month:digital:2]/[day:digital:2]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'archive_year_page'  =>
+        'archive_year_page' =>
             [
-                'url'    => '/[year:digital:4]/page/[page:digital]/',
+                'url' => '/[year:digital:4]/page/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
         'archive_month_page' =>
             [
-                'url'    => '/[year:digital:4]/[month:digital:2]/page/[page:digital]/',
+                'url' => '/[year:digital:4]/[month:digital:2]/page/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'archive_day_page'   =>
+        'archive_day_page' =>
             [
-                'url'    => '/[year:digital:4]/[month:digital:2]/[day:digital:2]/page/[page:digital]/',
+                'url' => '/[year:digital:4]/[month:digital:2]/[day:digital:2]/page/[page:digital]/',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'comment_page'       =>
+        'comment_page' =>
             [
-                'url'    => '[permalink:string]/comment-page-[commentPage:digital]',
+                'url' => '[permalink:string]/comment-page-[commentPage:digital]',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
-        'feed'               =>
+        'feed' =>
             [
-                'url'    => '/feed[feed:string:0]',
+                'url' => '/feed[feed:string:0]',
                 'widget' => '\Widget\Archive',
                 'action' => 'feed',
             ],
-        'feedback'           =>
+        'feedback' =>
             [
-                'url'    => '[permalink:string]/[type:alpha]',
+                'url' => '[permalink:string]/[type:alpha]',
                 'widget' => '\Widget\Feedback',
                 'action' => 'action',
             ],
-        'page'               =>
+        'page' =>
             [
-                'url'    => '/[slug].html',
+                'url' => '/[slug].html',
                 'widget' => '\Widget\Archive',
                 'action' => 'render',
             ],
@@ -231,7 +231,7 @@ function install_get_default_routers(): array
 }
 
 /**
- * list all default options
+ * list all default options： 读取默认的安装可选配置
  *
  * @return array
  */
@@ -534,7 +534,7 @@ function install_success($step, ?array $config = null)
         install_throw_json([
             'success' => 1,
             'message' => $step,
-            'config'  => $config
+            'config' => $config
         ]);
     }
 }
@@ -714,7 +714,8 @@ function install_step_1()
                     </ul>
 
                     <p class="submit">
-                        <button class="btn primary" type="submit"><?php _e('我准备好了, 开始下一步 &raquo;'); ?></button>
+                        <button class="btn primary"
+                                type="submit"><?php _e('我准备好了, 开始下一步 &raquo;'); ?></button>
                         <input type="hidden" name="step" value="1">
 
                         <?php if (count($langs) > 1) : ?>
@@ -722,7 +723,7 @@ function install_step_1()
                                 <?php foreach ($langs as $key => $val) : ?>
                                     <option value="<?php echo $key; ?>"<?php if ($lang == $key) :
                                         ?> selected<?php
-                                                   endif; ?>><?php echo $val; ?></option>
+                                    endif; ?>><?php echo $val; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         <?php endif; ?>
@@ -812,7 +813,7 @@ function install_step_2()
                             <?php foreach ($drivers as $driver => $name) : ?>
                                 <option value="<?php echo $driver; ?>"<?php if ($driver == $adapter) :
                                     ?> selected="selected"<?php
-                                               endif; ?>><?php echo $name; ?></option>
+                                endif; ?>><?php echo $name; ?></option>
                             <?php endforeach; ?>
                         </select>
                         <p class="description"><?php _e('请根据您的数据库类型选择合适的适配器'); ?></p>
@@ -822,7 +823,7 @@ function install_step_2()
                 <ul class="typecho-option">
                     <li>
                         <label class="typecho-label" for="dbPrefix"><?php _e('数据库前缀'); ?></label>
-                        <input type="text" class="text" name="dbPrefix" id="dbPrefix" value="typecho_" />
+                        <input type="text" class="text" name="dbPrefix" id="dbPrefix" value="typecho_"/>
                         <p class="description"><?php _e('默认前缀是 "typecho_"'); ?></p>
                     </li>
                 </ul>
@@ -831,7 +832,8 @@ function install_step_2()
 
                 <ul class="typecho-option typecho-option-submit">
                     <li>
-                        <button id="confirm" type="submit" class="btn primary"><?php _e('确认, 开始安装 &raquo;'); ?></button>
+                        <button id="confirm" type="submit"
+                                class="btn primary"><?php _e('确认, 开始安装 &raquo;'); ?></button>
                         <input type="hidden" name="step" value="2">
                     </li>
                 </ul>
@@ -1094,7 +1096,7 @@ function install_step_2_perform()
                 _t('安装程序无法自动创建 <strong>config.inc.php</strong> 文件') . "\n" .
                 _t('您可以在网站根目录下手动创建 <strong>config.inc.php</strong> 文件, 并复制如下代码至其中'),
                 [
-                'code' => $code
+                    'code' => $code
                 ]
             );
         }
@@ -1197,28 +1199,29 @@ function install_step_3()
                 <ul class="typecho-option">
                     <li>
                         <label class="typecho-label" for="userUrl"><?php _e('网站地址'); ?></label>
-                        <input autocomplete="new-password" type="text" name="userUrl" id="userUrl" class="text" value="<?php $options->rootUrl(); ?>" />
+                        <input autocomplete="new-password" type="text" name="userUrl" id="userUrl" class="text"
+                               value="<?php $options->rootUrl(); ?>"/>
                         <p class="description"><?php _e('这是程序自动匹配的网站路径, 如果不正确请修改它'); ?></p>
                     </li>
                 </ul>
                 <ul class="typecho-option">
                     <li>
                         <label class="typecho-label" for="userName"><?php _e('用户名'); ?></label>
-                        <input autocomplete="new-password" type="text" name="userName" id="userName" class="text" />
+                        <input autocomplete="new-password" type="text" name="userName" id="userName" class="text"/>
                         <p class="description"><?php _e('请填写您的用户名'); ?></p>
                     </li>
                 </ul>
                 <ul class="typecho-option">
                     <li>
                         <label class="typecho-label" for="userPassword"><?php _e('登录密码'); ?></label>
-                        <input type="password" name="userPassword" id="userPassword" class="text" />
+                        <input type="password" name="userPassword" id="userPassword" class="text"/>
                         <p class="description"><?php _e('请填写您的登录密码, 如果留空系统将为您随机生成一个'); ?></p>
                     </li>
                 </ul>
                 <ul class="typecho-option">
                     <li>
                         <label class="typecho-label" for="userMail"><?php _e('邮件地址'); ?></label>
-                        <input autocomplete="new-password" type="text" name="userMail" id="userMail" class="text" />
+                        <input autocomplete="new-password" type="text" name="userMail" id="userMail" class="text"/>
                         <p class="description"><?php _e('请填写一个您的常用邮箱'); ?></p>
                     </li>
                 </ul>
@@ -1380,10 +1383,10 @@ function install_step_3_perform()
 
     $parts = parse_url($options->loginAction);
     $parts['query'] = http_build_query([
-            'name'  => $config['userName'],
-            'password' => $config['userPassword'],
-            'referer' => $options->adminUrl
-        ]);
+        'name' => $config['userName'],
+        'password' => $config['userPassword'],
+        'referer' => $options->adminUrl
+    ]);
     $loginUrl = \Typecho\Common::buildUrl($parts);
 
     install_success(0, [
@@ -1401,6 +1404,7 @@ function install_step_3_perform()
 function install_dispatch()
 {
     // disable root url on cli mode
+    // cli模式下禁用根目录： 设置常量： __TYPECHO_ROOT_URL__
     if (install_is_cli()) {
         define('__TYPECHO_ROOT_URL__', 'http://localhost');
     }
@@ -1464,25 +1468,25 @@ function install_dispatch()
             exit;
         }
         ?>
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="<?php _e('UTF-8'); ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title><?php _e('Typecho 安装程序'); ?></title>
-    <link rel="stylesheet" type="text/css" href="<?php $options->adminStaticUrl('css', 'normalize.css') ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php $options->adminStaticUrl('css', 'grid.css') ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php $options->adminStaticUrl('css', 'style.css') ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php $options->adminStaticUrl('css', 'install.css') ?>" />
-    <script src="<?php $options->adminStaticUrl('js', 'jquery.js'); ?>"></script>
-</head>
-<body>
-    <div class="body container">
-        <h1><a href="https://typecho.org" target="_blank" class="i-logo">Typecho</a></h1>
-        <?php $method(); ?>
-    </div>
-</body>
-</html>
+        <!DOCTYPE HTML>
+        <html>
+        <head>
+            <meta charset="<?php _e('UTF-8'); ?>"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+            <title><?php _e('Typecho 安装程序'); ?></title>
+            <link rel="stylesheet" type="text/css" href="<?php $options->adminStaticUrl('css', 'normalize.css') ?>"/>
+            <link rel="stylesheet" type="text/css" href="<?php $options->adminStaticUrl('css', 'grid.css') ?>"/>
+            <link rel="stylesheet" type="text/css" href="<?php $options->adminStaticUrl('css', 'style.css') ?>"/>
+            <link rel="stylesheet" type="text/css" href="<?php $options->adminStaticUrl('css', 'install.css') ?>"/>
+            <script src="<?php $options->adminStaticUrl('js', 'jquery.js'); ?>"></script>
+        </head>
+        <body>
+        <div class="body container">
+            <h1><a href="https://typecho.org" target="_blank" class="i-logo">Typecho</a></h1>
+            <?php $method(); ?>
+        </div>
+        </body>
+        </html>
         <?php
     }
 }
