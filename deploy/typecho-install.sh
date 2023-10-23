@@ -12,7 +12,7 @@ function download_typecho_and_extract(){
             --url "$typecho_download_url"\
             --output 'typecho.zip'
        # 解压：
-       unzip  -d "$DEPLOYMENT_DIR/php-fpm/typecho" typecho.zip
+       unzip  -d "$DEPLOYMENT_DIR/php-fpm/typecho/" typecho.zip
     fi
 }
 
@@ -331,6 +331,10 @@ EOF
     done
 
 }
+
+
+# 安装docker和docker-compose
+install_docker_and_docker_compose
 
 
 # 如果已经安装过
