@@ -71,42 +71,36 @@ function install_unzip_curl() {
 }
 
 
-#  TODO
+#  安装docker和docker-compose
 function install_docker_and_docker_compose() {
     # 获取操作系统类型
     local os_type=$(uname)
+
     if [ "$os_type" == "Linux" ]; then
-        if [ -x "$(command -v apt-get)" ]; then
-            sudo apt-get update
-            # 安装docker
-            sudo apt-get install -y docker.io
-            sudo apt-get install -y
-        elif [ -x "$(command -v yum)" ]; then
-            sudo yum install -y unzip curl
+
+        # 如果未安装 docker,则进行安装
+        if [ ! -x "$(command -v docker)" ] ; then
+            # 下载安装Docker
+            curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh --mirror Aliyun
         else
-            echo "不支持的Linux发行版"
-            exit 1
+            echo "docker 已安装..."
         fi
+
+       # 如果未安装 docker-compose ,则进行安装
+        if [ ! -x "$(command -v docker-compose)" ] ; then
+            # 下载安装Docker Compose
+            curl -SL https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose && chmod 777 /usr/local/bin/docker-compose
+        else
+             echo "docker-compose 已安装..."
+        fi
+
+        sudo systemctl start docker > /dev/null 2>&1
     elif [ "$os_type" == "Darwin" ]; then
-        if [ -x "$(command -v brew)" ]; then
-             brew install unzip curl
-        else
-            echo "未找到Homebrew，请安装Homebrew后再试。"
-            exit 1
-        fi
+        echo "MacOS系统暂不支持安装Docker。"
     elif [ "$os_type" == "Linux" ] && [ -f "/proc/sys/kernel/osrelease" ]; then
-        if [ -x "$(command -v apt-get)" ]; then
-            sudo apt-get update
-            sudo apt-get install -y unzip curl
-        elif [ -x "$(command -v yum)" ]; then
-            sudo yum install -y unzip curl
-        else
-            echo "未找到支持的包管理器。"
-            exit 1
-        fi
+        echo "Windows系统暂不支持安装Docker"
     else
         echo "不支持的操作系统"
-        exit 1
     fi
 }
 
